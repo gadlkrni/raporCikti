@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication3
+{
+
+    class Kapi
+    {
+        public bool cam;
+        string yapisi;
+        string boya;
+        public static bool kulp(int a)
+        {
+            if ( a == 1 ) { return true; }
+            return false;
+        }
+        int mentese;
+        int agirlik;
+        int en;
+        int boy;
+        int kboy;
+        int ken;
+        public int enDegeri
+        {
+            get{
+                return en;
+            }
+
+            set
+            {
+                // nesne yaratıldığı anda çağırılır.
+                en = value;
+
+            }
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Kapi odakapisi = new Kapi();
+            odakapisi.cam = true;
+            odakapisi.enDegeri = 10;
+            Console.WriteLine(odakapisi.enDegeri);
+            Console.ReadLine();
+
+        }
+    }
+}
