@@ -26,13 +26,14 @@ namespace ConsoleApplication3
         public int enDegeri
         {
             get{
+                // ekrana yazarken çalışır.
                 return en;
             }
 
             set
             {
                 // nesne yaratıldığı anda çağırılır.
-                en = value;
+                if ( value > 3 ) { en = value; }
 
             }
         }
@@ -44,7 +45,7 @@ namespace ConsoleApplication3
         {
             Kapi odakapisi = new Kapi();
             odakapisi.cam = true;
-            odakapisi.enDegeri = 10;
+            odakapisi.enDegeri = 4;
             Console.WriteLine(odakapisi.enDegeri);
             Console.ReadLine();
 
