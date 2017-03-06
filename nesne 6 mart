@@ -1,0 +1,24 @@
+class Ogrenci
+    {
+        public string ad;
+        private string hesapNo = "12345";
+
+        public void yazdir()
+        {
+            Console.WriteLine("Ekrana yaz! Ad: " + ad + " \t hesap: " + hesapNo);
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Ogrenci ahmet = new Ogrenci("Ayşe");
+            ahmet.ad = "Ahmet!";
+            ahmet.yazdir();
+            Ogrenci mehmet = new Ogrenci();
+            mehmet.ad = "Mehmet!";
+            mehmet.yazdir();
+            Console.ReadLine();
+        }
+    }
