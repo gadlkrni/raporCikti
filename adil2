@@ -1,0 +1,78 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApplication2
+{
+    class tcNoKontrol
+    {
+        private string tcbudur;
+        int basamak_1, basamak_2, basamak_3, basamak_4, basamak_5, basamak_6, basamak_7, basamak_8, basamak_9, basamak_10, basamak_11;
+        public string kontrol
+        {
+            get
+            {
+                // ekrana yazarken çalışır.
+                return tcbudur;
+            }
+
+            set
+            {
+                basamak_1 = Convert.ToInt32(value.Substring(0, 1));
+                basamak_2 = Convert.ToInt32(value.Substring(1, 1));
+                basamak_3 = Convert.ToInt32(value.Substring(2, 1));
+                basamak_4 = Convert.ToInt32(value.Substring(3, 1));
+                basamak_5 = Convert.ToInt32(value.Substring(4, 1));
+                basamak_6 = Convert.ToInt32(value.Substring(5, 1));
+                basamak_7 = Convert.ToInt32(value.Substring(6, 1));
+                basamak_8 = Convert.ToInt32(value.Substring(7, 1));
+                basamak_9 = Convert.ToInt32(value.Substring(8, 1));
+                basamak_10 = Convert.ToInt32(value.Substring(9, 1));
+                basamak_11 = Convert.ToInt32(value.Substring(10, 1));
+
+                if ( value.Length != 11)
+                {
+                    Console.WriteLine("UZUNLUK 11 HANE OLACAK!");
+                }else if  ( basamak_1 != 0 )
+                {
+                    Console.WriteLine("İLK HANE SIFIR OLAMAZ!");
+                }else if ( (((basamak_1 + basamak_3 + basamak_5 + basamak_7 + basamak_9)*7) + ((basamak_2 + basamak_4 + basamak_6 + basamak_8)*9)) % 10 != basamak_10)
+                {
+                    Console.WriteLine("10. HANE Yİ VERMEDİ");
+                }else if ( (basamak_1 + basamak_2 + basamak_3 + basamak_4 + basamak_5 + basamak_6 + basamak_7 + basamak_8 + basamak_9 + basamak_10) % 10 != basamak_11)
+                {
+                    Console.WriteLine("11. HANE Yİ VERMEDİ");
+                }
+                else
+                {
+                    Console.WriteLine("DOĞRUDUR!!!! ---- BAŞARILI");
+                }
+
+            }
+        }
+    }
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            string gelentc = textBox1.Text;
+            tcNoKontrol nesnem = new tcNoKontrol();
+            nesnem.kontrol = "12092611554";
+            Console.WriteLine("TC: " + nesnem.kontrol);
+
+
+        }
+    }
+}
