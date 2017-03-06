@@ -50,6 +50,7 @@ namespace WindowsFormsApplication2
                     else if (basamak_1 == 0)
                     {
                         MessageBox.Show("İLK HANE SIFIR OLAMAZ!");
+                        
                     }
                     else if ((((basamak_1 + basamak_3 + basamak_5 + basamak_7 + basamak_9) * 7) + ((basamak_2 + basamak_4 + basamak_6 + basamak_8) * 9)) % 10 != basamak_10)
                     {
@@ -62,6 +63,7 @@ namespace WindowsFormsApplication2
                     else
                     {
                         MessageBox.Show("DOĞRUDUR!!!! ---- BAŞARILI");
+                        tcbudur = value;
                     }
 
                 }
@@ -78,7 +80,7 @@ namespace WindowsFormsApplication2
             string gelentc = textBox1.Text;
             tcNoKontrol nesnem = new tcNoKontrol();
             nesnem.kontrol = gelentc;
-            Console.WriteLine("TC: " + nesnem.kontrol);
+            label1.Text = nesnem.kontrol;
 
 
         }
