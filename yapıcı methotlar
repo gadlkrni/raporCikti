@@ -1,0 +1,39 @@
+class tarafı
+
+-------------------
+
+class Memur
+    {
+
+        public int sskNo;
+        public string ad;
+        public float maas;
+
+        public Memur(string ad, float maas, int sskNo)
+        {
+            this.ad = ad;
+            this.maas = maas;
+            this.sskNo = sskNo;
+        }
+
+        public Memur(int sskNo) : this("", 0, sskNo) { }
+
+    }
+    
+------------
+
+Memur matbaa = new Memur("Ayse", 500, 2152);
+
+            Console.WriteLine(matbaa.ad);
+            Console.WriteLine(matbaa.maas);
+            Console.WriteLine(matbaa.sskNo);
+
+            Console.WriteLine("------------------------");
+
+            Memur matbaa2 = new Memur(251125);
+
+            Console.WriteLine(matbaa2.ad);
+            Console.WriteLine(matbaa2.maas);
+            Console.WriteLine(matbaa2.sskNo);
+
+            Console.ReadKey();
