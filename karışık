@@ -1,0 +1,113 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication2
+{
+    class Araba
+    {
+        public int agirlik;
+        public int motorhacmi;
+        public string renk;
+        public int vitessayisi;
+        public int kapisayisi;
+
+        public Araba() { }
+
+        public Araba(int motorhacmi) : this(0, motorhacmi, "Beyaz", 7, 4) { Console.WriteLine("ahanda bu"); }
+
+        public Araba(int a, int b, string c, int d, int e)
+        {
+
+            if ( d < 5) {
+                Console.WriteLine("VİTES 5 DEN KÜÇÜK OLAMAZ! VİTES YETMEZLİĞİ VARR");
+            } else {
+                this.agirlik = a;
+                this.motorhacmi = b;
+                this.renk = c;
+                this.vitessayisi = d;
+                this.kapisayisi = e;
+            }
+
+        }
+        
+
+    }
+}
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Araba ferrari = new Araba(1400, 7000, "Kırmızı", 1, 2);
+
+            Console.WriteLine("Ağırlık: " + ferrari.agirlik);
+            Console.WriteLine("M Hacmi: " + ferrari.motorhacmi);
+            Console.WriteLine("Renk...: " + ferrari.renk);
+            Console.WriteLine("Vites S: " + ferrari.vitessayisi);
+            Console.WriteLine("Kapı Sa: " + ferrari.kapisayisi);
+
+            Console.WriteLine("-------------------------------------");
+
+            Araba ferrari2 = new Araba(8630);
+
+            Console.WriteLine("Ağırlık: " + ferrari2.agirlik);
+            Console.WriteLine("M Hacmi: " + ferrari2.motorhacmi);
+            Console.WriteLine("Renk...: " + ferrari2.renk);
+            Console.WriteLine("Vites S: " + ferrari2.vitessayisi);
+            Console.WriteLine("Kapı Sa: " + ferrari2.kapisayisi);
+
+            Console.WriteLine("-------------------------------------");
+
+            Koltuk massey = new Koltuk();
+            massey.ciftCeker = false;
+            massey.derimi = true;
+            massey.isitmali = "ZAMAN ZAMAN";
+            massey.agirlik = 5000;
+            massey.motorhacmi = 1;
+            Console.WriteLine("Deri mi: " + massey.derimi);
+            Console.WriteLine("Isıtmal: " + massey.isitmali);
+            Console.WriteLine("Cift Çe: " + massey.ciftCeker);
+            Console.WriteLine("Ağırlık: " + massey.agirlik);
+            Console.WriteLine("M Hacmi: " + massey.motorhacmi);
+            Console.WriteLine("Renk...: " + massey.renk);
+            Console.WriteLine("Vites S: " + massey.vitessayisi);
+            Console.WriteLine("Kapı Sa: " + massey.kapisayisi);
+            
+
+            Console.ReadKey();
+
+        }
+    }
+}
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication2
+{
+    class Koltuk:Araba
+    {
+
+        public bool ciftCeker;
+        public string isitmali;
+        public bool derimi;
+
+    }
+}
