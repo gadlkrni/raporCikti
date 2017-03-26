@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace sonVize
+{
+    class Otomobil
+    {
+        public int tekerSayisi;
+        public int motorGucu;
+        public string renk;
+
+        public Otomobil(int t, int m, string r)
+        {
+            this.tekerSayisi = t;
+            this.motorGucu = m;
+            this.renk = r;
+        }
+    }
+    class OtomobilVerileri
+    {
+        public List<Otomobil> arabalarim = new List<Otomobil>();
+
+        public void listele()
+        {
+            foreach (var arac in arabalarim)
+            {
+                Console.Write("{0} -- {1} -- {2}", arac.tekerSayisi, arac.motorGucu, arac.renk);
+                Console.WriteLine();
+            }
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Otomobil ferrari = new Otomobil(4, 5000, "Kırmızı");
+            Otomobil jetta = new Otomobil(4, 1600, "Siyah");
+            Otomobil man = new Otomobil(8, 46000, "Beyaz");
+            Otomobil golf2 = new Otomobil(4, 1400, "Beyaz");
+
+            OtomobilVerileri benimArabalarim = new OtomobilVerileri();
+            benimArabalarim.arabalarim.Add(ferrari);
+            benimArabalarim.arabalarim.Add(man);
+            benimArabalarim.arabalarim.Add(golf2);
+
+            benimArabalarim.listele();
+            Console.ReadKey();
+
+        }
+    }
+}
