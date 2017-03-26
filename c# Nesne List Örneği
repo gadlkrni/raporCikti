@@ -31,6 +31,13 @@ namespace sonVize
                 Console.WriteLine();
             }
         }
+
+        public void tekerSayilariniTopla()
+        {
+            int toplamTeker = 0;
+            toplamTeker = arabalarim.Sum(i => i.tekerSayisi);
+            Console.WriteLine("Top Teker Sayısı: {0}", toplamTeker);
+        }
     }
     class Program
     {
@@ -48,6 +55,7 @@ namespace sonVize
             benimArabalarim.arabalarim.Add(golf2);
 
             benimArabalarim.listele();
+            benimArabalarim.tekerSayilariniTopla();
             Console.ReadKey();
 
         }
